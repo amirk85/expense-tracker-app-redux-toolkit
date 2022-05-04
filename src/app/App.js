@@ -1,17 +1,5 @@
-import Home from "../components/Home";
-
 function App() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Home />
-    </div>
-  );
+  return <div>hello world</div>;
 }
 
 export default App;
