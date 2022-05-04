@@ -1,11 +1,14 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
 export default function Form({ btnColor }) {
+  function submitHandler(e) {
+    e.preventDefault();
+  }
+
   return (
-    <Box>
+    <form onSubmit={submitHandler}>
       <TextField
         id="outlined-basic"
         label="Title"
@@ -28,9 +31,10 @@ export default function Form({ btnColor }) {
         style={{ backgroundColor: btnColor }}
         variant="contained"
         fullWidth
+        type="submit"
       >
         Submit
       </Button>
-    </Box>
+    </form>
   );
 }

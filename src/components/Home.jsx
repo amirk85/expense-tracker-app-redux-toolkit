@@ -5,7 +5,7 @@ import Incomes from "./Incomes";
 
 export default function Home() {
   return (
-    <section
+    <main
       style={{
         display: "flex",
         // flexDirection: "column",
@@ -17,6 +17,6 @@ export default function Home() {
       <Balance />
       <Incomes />
       <Expenses />
-    </section>
+    </main>
   );
 }
