@@ -5,8 +5,17 @@ import IncomeList from "./IncomeList";
 
 export default function IncomeRoot() {
   return (
-    <div>
-      <Typography variant="h4">Income</Typography>
+    <div
+      style={{
+        backgroundColor: "red",
+        marginTop: "1rem",
+        padding: "1rem",
+        borderRadius: "4px",
+      }}
+    >
+      <Typography marginBottom={"2rem"} align="center" variant="h4">
+        Income
+      </Typography>
       <IncomeForm />
       <IncomeList />
     </div>

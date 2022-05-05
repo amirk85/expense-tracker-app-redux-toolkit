@@ -10,9 +10,17 @@ const initialState = {
 const expenseSlice = createSlice({
   name: "expense",
   initialState,
-  reducers: {},
+  reducers: {
+    ADD_EXPENSE(state, { payload }) {
+      state.expenseData.push(payload);
+    },
+    DEL_EXPENSE(state, { payload }) {
+      const filteredData = state.expenseData.filter((i) => i.id !== payload);
+      state.expenseData = filteredData;
+    },
+  },
 });
 
 export const EXPENSE_DATA = (state) => state.expense.expenseData;
-export const expenseActions = expenseSlice.actions;
+export const { ADD_EXPENSE, DEL_EXPENSE } = expenseSlice.actions;
 export default expenseSlice.reducer;

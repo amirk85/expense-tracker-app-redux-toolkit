@@ -6,7 +6,9 @@ import ExpenseList from "./ExpenseList";
 export default function ExpenseRoot() {
   return (
     <div>
-      <Typography variant="h4">Expenses</Typography>
+      <Typography margin={"2rem 0"} align="center" variant="h4">
+        Expenses
+      </Typography>
       <ExpenseForm />
       <ExpenseList />
     </div>

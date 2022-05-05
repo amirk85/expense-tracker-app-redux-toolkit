@@ -4,18 +4,16 @@ import IncomeRoot from "../components/Incomes/IncomeRoot";
 
 export default function App() {
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", padding: "0 2rem" }}
-    >
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <Header />
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          marginTop: "2rem",
+          display: "grid",
+          gridTemplateColumns: "repeat(2,1fr)",
+          gap: "2rem",
+          padding: "0 2rem",
         }}
       >
-        <h1>Balance</h1>
         <IncomeRoot />
         <ExpenseRoot />
       </div>

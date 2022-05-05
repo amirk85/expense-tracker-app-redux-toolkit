@@ -9,11 +9,16 @@ const label = { inputProps: { "aria-label": "Switch demo" } };
 
 export default function Header() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box style={{ padding: "0 2rem" }} sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar style={{ backgroundColor: "#f5f5f1" }}>
+          <Typography fontWeight={600} variant="h5" sx={{ color: "#333" }}>
+            Balance : {1000}
+          </Typography>
+
           <Typography
-            variant="h6"
+            variant="h4"
+            fontWeight="500"
             align="center"
             component="div"
             sx={{ flexGrow: 1, color: "#333" }}

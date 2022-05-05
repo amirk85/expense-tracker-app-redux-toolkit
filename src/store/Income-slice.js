@@ -10,9 +10,17 @@ const initialState = {
 const incomeSlice = createSlice({
   name: "income",
   initialState,
-  reducers: {},
+  reducers: {
+    ADD_INCOME(state, { payload }) {
+      state.incomeData.push(payload);
+    },
+    DEL_INCOME(state, { payload }) {
+      const filteredData = state.incomeData.filter((i) => i.id !== payload);
+      state.incomeData = filteredData;
+    },
+  },
 });
 
 export const INCOME_DATA = (state) => state.income.incomeData;
-export const incomeActions = incomeSlice.actions;
+export const { ADD_INCOME, DEL_INCOME } = incomeSlice.actions;
 export default incomeSlice.reducer;
