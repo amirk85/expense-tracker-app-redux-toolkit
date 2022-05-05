@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   expenseData: [
-    { id: 1, title: "shopping", amount: 30 },
-    { id: 2, title: "shopping", amount: 30 },
-    { id: 3, title: "shopping", amount: 30 },
+    { id: 1, desc: "shopping", amount: 30 },
+    { id: 2, desc: "shopping", amount: 30 },
+    { id: 3, desc: "shopping", amount: 30 },
   ],
 };
 const expenseSlice = createSlice({

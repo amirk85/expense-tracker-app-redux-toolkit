@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   incomeData: [
-    { id: 1, title: "salary", amount: 25000 },
-    { id: 2, title: "bitcoin", amount: 10000 },
-    { id: 3, title: "sold phone", amount: 15000 },
+    { id: 1, desc: "salary", amount: 25000 },
+    { id: 2, desc: "bitcoin", amount: 10000 },
+    { id: 3, desc: "sold phone", amount: 15000 },
   ],
 };
 const incomeSlice = createSlice({
