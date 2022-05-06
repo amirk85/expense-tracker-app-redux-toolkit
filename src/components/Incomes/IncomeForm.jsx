@@ -1,6 +1,6 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
-import { Button } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 import { ADD_INCOME } from "../../store/income-slice";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";

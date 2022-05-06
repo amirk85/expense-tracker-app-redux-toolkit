@@ -1,23 +1,25 @@
-import { Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import React from "react";
 import IncomeForm from "./IncomeForm";
 import IncomeList from "./IncomeList";
 
 export default function IncomeRoot() {
   return (
-    <div
-      style={{
-        backgroundColor: "red",
-        marginTop: "1rem",
-        padding: "1rem",
-        borderRadius: "4px",
-      }}
-    >
-      <Typography marginBottom={"2rem"} align="center" variant="h4">
-        Income
-      </Typography>
+    <Paper style={{ marginTop: "1rem", padding: "1rem" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Typography margin={"1rem 0"} variant="h4">
+          Add Income
+        </Typography>
+        <Typography variant="h5">Total: 1000</Typography>
+      </div>
       <IncomeForm />
       <IncomeList />
-    </div>
+    </Paper>
   );
 }

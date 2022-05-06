@@ -13,7 +13,7 @@ export default function IncomeList() {
   ));
 
   return (
-    <Paper
+    <div
       style={{
         maxHeight: 320,
         overflow: "auto",
@@ -21,6 +21,6 @@ export default function IncomeList() {
       }}
     >
       {renderData}
-    </Paper>
+    </div>
   );
 }
