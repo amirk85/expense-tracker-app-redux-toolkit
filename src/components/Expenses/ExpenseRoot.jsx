@@ -11,8 +11,7 @@ export default function ExpenseRoot() {
 
   const TotalExpense = useSelector(EXPENSE_DATA)
     .map((i) => i.amount)
-    .reduce((a, c) => a + c, 0)
-    .toFixed(2);
+    .reduce((a, c) => a + c, 0);
 
   return (
     <Paper style={{ marginTop: "1rem", padding: "1rem" }}>
@@ -34,7 +33,7 @@ export default function ExpenseRoot() {
         amount={amount}
         setAmount={setAmount}
       />
-      <ExpenseList />
+      <ExpenseList setDesc={setDesc} setAmount={setAmount} />
     </Paper>
   );
 }

@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
-import { DEL_EXPENSE } from "../../store/expense-slice";
 import { DEL_INCOME } from "../../store/income-slice";
 
 export default function IncomeItem({ income, onEdit }) {

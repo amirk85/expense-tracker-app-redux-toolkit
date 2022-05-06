@@ -9,12 +9,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { DEL_EXPENSE } from "../../store/expense-slice";
 import { useDispatch } from "react-redux";
 
-export default function ExpenseItem({ income }) {
+export default function ExpenseItem({ income, onEdit }) {
   const { id, desc, amount } = income;
 
   const dispatch = useDispatch();
-
-  function editHandler(id) {}
 
   return (
     <div>
@@ -27,7 +25,7 @@ export default function ExpenseItem({ income }) {
                   edge="end"
                   aria-label="edit"
                   sx={{ marginRight: "0.5rem" }}
-                  onClick={editHandler}
+                  onClick={() => onEdit(id, desc, amount)}
                 >
                   <EditIcon />
                 </IconButton>
@@ -42,7 +40,7 @@ export default function ExpenseItem({ income }) {
               </Box>
             }
           >
-            <ListItemText primary={desc} secondary={`₹ ${amount.toFixed(2)}`} />
+            <ListItemText primary={desc} secondary={`₹ ${amount}`} />
           </ListItem>
         }
       </List>

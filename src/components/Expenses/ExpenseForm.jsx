@@ -25,10 +25,11 @@ export default function ExpenseForm(props) {
         onChange={(e) => setDesc(e.target.value)}
         type="text"
         style={{ width: "70%" }}
-        id="outlined-basic"
+        id="outlined-expense"
         label="Description"
         variant="outlined"
         size="small"
+        className="expense_input"
       />
       <TextField
         value={amount}

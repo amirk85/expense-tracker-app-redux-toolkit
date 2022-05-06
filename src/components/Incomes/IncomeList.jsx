@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { INCOME_DATA, SET_EDIT_ID } from "../../store/income-slice";
+import { INCOME_DATA, SET_INCOME_ID } from "../../store/income-slice";
 import IncomeItem from "./IncomeItem";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,10 +9,11 @@ export default function IncomeList(props) {
   const dispatch = useDispatch();
 
   function editHandler(id, desc, amount) {
-    dispatch(SET_EDIT_ID(id));
+    dispatch(SET_INCOME_ID(id));
     setDesc(desc);
     setAmount(amount);
-    document.getElementById("outlined-basic").focus();
+    document.getElementById("outlined-income").focus();
+    console.log(id);
   }
 
   const data = useSelector(INCOME_DATA);

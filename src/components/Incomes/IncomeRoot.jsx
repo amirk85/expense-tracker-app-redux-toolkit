@@ -8,13 +8,21 @@ import IncomeList from "./IncomeList";
 export default function IncomeRoot() {
   const [desc, setDesc] = React.useState("");
   const [amount, setAmount] = React.useState("");
+  const theme = useSelector((state) => state.income.theme);
 
   const totalIncome = useSelector(INCOME_DATA)
     .map((i) => i.amount)
     .reduce((a, c) => a + c, 0);
 
   return (
-    <Paper style={{ marginTop: "1rem", padding: "1rem" }}>
+    <Paper
+      style={{
+        marginTop: "1rem",
+        padding: "1rem",
+        color: theme.color,
+        backgroundColor: theme.bg,
+      }}
+    >
       <div
         style={{
           display: "flex",
