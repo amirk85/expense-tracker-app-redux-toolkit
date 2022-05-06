@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { DEL_EXPENSE } from "../../store/expense-slice";
 import { DEL_INCOME } from "../../store/income-slice";
 
-export default function IncomeItem({ income }) {
+export default function IncomeItem({ income, onEdit }) {
   const { id, desc, amount } = income;
 
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ export default function IncomeItem({ income }) {
                 edge="end"
                 aria-label="edit"
                 sx={{ marginRight: "0.5rem" }}
+                onClick={() => onEdit(id, desc, amount)}
               >
                 <EditIcon />
               </IconButton>
@@ -38,7 +39,7 @@ export default function IncomeItem({ income }) {
             </Box>
           }
         >
-          <ListItemText primary={desc} secondary={amount} />
+          <ListItemText primary={desc} secondary={`₹ ${amount}`} />
         </ListItem>
       }
     </List>

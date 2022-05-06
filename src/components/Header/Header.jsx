@@ -19,8 +19,8 @@ export default function Header() {
     .map((i) => i.amount)
     .reduce((a, c) => a + c, 0);
 
-  const bal = totalIncome - TotalExpense;
-  const balColor = bal ? "#34A853" : "#EA4335";
+  const bal = Math.abs(totalIncome - TotalExpense).toFixed(2);
+  const balColor = totalIncome > TotalExpense ? "#34A853" : "#EA4335";
 
   return (
     <Box style={{ padding: "0 2rem" }} sx={{ flexGrow: 1 }}>

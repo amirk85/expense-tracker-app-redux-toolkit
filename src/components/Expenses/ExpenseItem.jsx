@@ -14,6 +14,8 @@ export default function ExpenseItem({ income }) {
 
   const dispatch = useDispatch();
 
+  function editHandler(id) {}
+
   return (
     <div>
       <List>
@@ -25,6 +27,7 @@ export default function ExpenseItem({ income }) {
                   edge="end"
                   aria-label="edit"
                   sx={{ marginRight: "0.5rem" }}
+                  onClick={editHandler}
                 >
                   <EditIcon />
                 </IconButton>
@@ -39,7 +42,7 @@ export default function ExpenseItem({ income }) {
               </Box>
             }
           >
-            <ListItemText primary={desc} secondary={amount} />
+            <ListItemText primary={desc} secondary={`₹ ${amount.toFixed(2)}`} />
           </ListItem>
         }
       </List>

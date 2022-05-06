@@ -5,9 +5,9 @@ import { ADD_INCOME } from "../../store/income-slice";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-export default function IncomeForm() {
-  const [desc, setDesc] = React.useState("");
-  const [amount, setAmount] = React.useState("");
+export default function IncomeForm(props) {
+  const { desc, setDesc, amount, setAmount } = props;
+
   const dispatch = useDispatch();
 
   function submitHandler(e) {

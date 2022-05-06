@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 import { ADD_EXPENSE } from "../../store/expense-slice";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ExpenseForm() {
-  const [desc, setDesc] = React.useState("");
-  const [amount, setAmount] = React.useState("");
+export default function ExpenseForm(props) {
+  const { desc, setDesc, amount, setAmount } = props;
+
   const dispatch = useDispatch();
 
   function submitHandler(e) {
