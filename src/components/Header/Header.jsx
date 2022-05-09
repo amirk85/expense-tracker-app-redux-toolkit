@@ -3,26 +3,17 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Switch from "@mui/material/Switch";
-import { useDispatch, useSelector } from "react-redux";
-import { INCOME_DATA, TOGGLE_THEME } from "../../store/income-slice";
+import { useSelector } from "react-redux";
+import { INCOME_DATA } from "../../store/income-slice";
 import { EXPENSE_DATA } from "../../store/expense-slice";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 export default function Header() {
-  const dispatch = useDispatch();
-  const theme = useSelector((state) => state.income.theme);
-
-  function toggleThemeHandler() {
-    dispatch(TOGGLE_THEME());
-  }
-
   const totalIncome = useSelector(INCOME_DATA)
-    .map((i) => i.amount)
+    .map((i) => Number(i.amount))
     .reduce((a, c) => a + c, 0);
 
   const TotalExpense = useSelector(EXPENSE_DATA)
-    .map((i) => i.amount)
+    .map((i) => Number(i.amount))
     .reduce((a, c) => a + c, 0);
 
   const bal = Math.abs(totalIncome - TotalExpense);
@@ -30,9 +21,9 @@ export default function Header() {
 
   return (
     <Box style={{ padding: "0 2rem" }} sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar style={{ backgroundColor: theme.bg }}>
-          <Typography fontWeight={600} variant="h5" sx={{ color: theme.color }}>
+      <AppBar style={{ backgroundColor: "#fff" }} position="static">
+        <Toolbar>
+          <Typography color={"#221F1F"} fontWeight={600} variant="h5">
             Balance : <span style={{ color: balColor }}>{bal}</span>
           </Typography>
 
@@ -41,14 +32,10 @@ export default function Header() {
             fontWeight="500"
             align="center"
             component="div"
-            sx={{ flexGrow: 1, color: theme.color }}
+            sx={{ flexGrow: 1, color: "#221F1F" }}
           >
             Expense Tracker App
           </Typography>
-          <DarkModeIcon
-            style={{ backgroundColor: theme.bg, color: theme.color }}
-            onClick={toggleThemeHandler}
-          />
         </Toolbar>
       </AppBar>
     </Box>

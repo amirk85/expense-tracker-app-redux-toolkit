@@ -25,7 +25,7 @@ export default function IncomeList(props) {
   return (
     <div
       style={{
-        maxHeight: 320,
+        maxHeight: 300,
         overflow: "auto",
         marginTop: "1rem",
       }}

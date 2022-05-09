@@ -8,10 +8,9 @@ import IncomeList from "./IncomeList";
 export default function IncomeRoot() {
   const [desc, setDesc] = React.useState("");
   const [amount, setAmount] = React.useState("");
-  const theme = useSelector((state) => state.income.theme);
 
   const totalIncome = useSelector(INCOME_DATA)
-    .map((i) => i.amount)
+    .map((i) => Number(i.amount))
     .reduce((a, c) => a + c, 0);
 
   return (
@@ -19,8 +18,6 @@ export default function IncomeRoot() {
       style={{
         marginTop: "1rem",
         padding: "1rem",
-        color: theme.color,
-        backgroundColor: theme.bg,
       }}
     >
       <div
@@ -33,7 +30,9 @@ export default function IncomeRoot() {
         <Typography margin={"1rem 0"} variant="h4">
           Add Income
         </Typography>
-        <Typography variant="h5">Total: {totalIncome}</Typography>
+        {totalIncome > 0 && (
+          <Typography variant="h5">Total: {totalIncome}</Typography>
+        )}
       </div>
       <IncomeForm
         desc={desc}

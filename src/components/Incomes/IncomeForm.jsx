@@ -12,7 +12,7 @@ export default function IncomeForm(props) {
 
   function submitHandler(e) {
     e.preventDefault();
-    if (desc.trim().length === 0 && amount.trim().length === 0) return;
+    if (desc.trim().length === 0 && amount === 0) alert("amir");
     dispatch(ADD_INCOME({ desc, amount, id: uuidv4() }));
     setDesc("");
     setAmount("");
@@ -23,6 +23,7 @@ export default function IncomeForm(props) {
       <TextField
         value={desc}
         onChange={(e) => setDesc(e.target.value)}
+        autoComplete="off"
         type="text"
         style={{ width: "70%" }}
         id="outlined-income"
@@ -38,6 +39,7 @@ export default function IncomeForm(props) {
         label="amount"
         variant="outlined"
         type="number"
+        inputProps={{ min: 0 }}
         size="small"
         autoComplete="off"
         style={{ width: "20%", marginLeft: "10%" }}

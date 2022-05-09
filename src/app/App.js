@@ -4,7 +4,12 @@ import IncomeRoot from "../components/Incomes/IncomeRoot";
 
 export default function App() {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Header />
       <div
         style={{

@@ -9,8 +9,8 @@ export default function ExpenseRoot() {
   const [desc, setDesc] = React.useState("");
   const [amount, setAmount] = React.useState("");
 
-  const TotalExpense = useSelector(EXPENSE_DATA)
-    .map((i) => i.amount)
+  const totalExpense = useSelector(EXPENSE_DATA)
+    .map((i) => Number(i.amount))
     .reduce((a, c) => a + c, 0);
 
   return (
@@ -25,7 +25,9 @@ export default function ExpenseRoot() {
         <Typography margin={"1rem 0"} variant="h4">
           Add Expense
         </Typography>
-        <Typography variant="h5">Total: {TotalExpense}</Typography>
+        {totalExpense > 0 && (
+          <Typography variant="h5">Total: {totalExpense}</Typography>
+        )}
       </div>
       <ExpenseForm
         desc={desc}

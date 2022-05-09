@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  incomeData: [
-    { id: 1, desc: "salary", amount: 50000 },
-    { id: 2, desc: "sold phone", amount: 10000 },
-    { id: 3, desc: "shares", amount: 30 },
-  ],
+  incomeData: [],
   editId: null,
   theme: {
     bg: "#fff",
@@ -35,14 +31,9 @@ const incomeSlice = createSlice({
     SET_INCOME_ID(state, { payload }) {
       state.editId = payload;
     },
-    TOGGLE_THEME(state) {
-      state.theme.bg = state.theme.bg === "#fff" ? "#221F1F" : "#fff";
-      state.theme.color = state.theme.color === "#221F1F" ? "#fff" : "#221F1F";
-    },
   },
 });
 
 export const INCOME_DATA = (state) => state.income.incomeData;
-export const { ADD_INCOME, DEL_INCOME, SET_INCOME_ID, TOGGLE_THEME } =
-  incomeSlice.actions;
+export const { ADD_INCOME, DEL_INCOME, SET_INCOME_ID } = incomeSlice.actions;
 export default incomeSlice.reducer;
